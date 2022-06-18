@@ -1,4 +1,5 @@
-const { marge, default: merge } = require('webpack-merge');
+const { merge } = require('webpack-merge');
+
 
 const webpackConfiguration = require('../webpack.config');
 const environment = require('./environment');
@@ -6,9 +7,7 @@ const environment = require('./environment');
 
 module.exports = merge(webpackConfiguration, {
     mode: 'development', 
-
     devtool: 'eval-source-map',
-
     // Development server  configuration
     devServer: {
         static: {
@@ -31,7 +30,7 @@ module.exports = merge(webpackConfiguration, {
     watchOptions: {
         aggregateTimeout: 300,
         poll: 300, 
-        ignore: /node_modules/,
+        ignored: /node_modules/,
     }, 
 
 })
