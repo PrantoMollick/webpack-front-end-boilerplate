@@ -7,7 +7,8 @@ const environment = require('./environment');
 
 module.exports = merge(webpackConfiguration, {
     mode: 'development', 
-    devtool: 'eval-source-map',
+    // devtool: 'eval-source-map',
+    devtool: false,
     // Development server  configuration
     devServer: {
         static: {
@@ -22,7 +23,7 @@ module.exports = merge(webpackConfiguration, {
 
         open: true, 
         compress: true, 
-        hot: false,
+        hot: true,
         ...environment.server,
     },
 
@@ -33,4 +34,6 @@ module.exports = merge(webpackConfiguration, {
         ignored: /node_modules/,
     }, 
 
+    plugins: [],
+    target: 'web'
 })

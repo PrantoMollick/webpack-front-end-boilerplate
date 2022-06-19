@@ -6,7 +6,6 @@ module.exports = {
         //path to source files directory
         source: path.resolve(__dirname, '../src/'),
 
-
         //path to build files directory
         output: path.resolve(__dirname, '../dist/'),
     }, 
